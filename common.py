@@ -25,8 +25,8 @@ import numpy as np
 
 # Paths.
 ROOT_PATH = Path(__file__).parent.resolve()
-MASK_NRRD_PATH = ROOT_PATH / '../ccf_2017/isocortex_mask_10.nrrd'
-BOUNDARY_NRRD_PATH = ROOT_PATH / '../ccf_2017/isocortex_boundary_10.nrrd'
+MASK_NRRD_PATH = ROOT_PATH / 'input/isocortex_mask_10.nrrd'
+BOUNDARY_NRRD_PATH = ROOT_PATH / 'input/isocortex_boundary_10.nrrd'
 
 # Volume shape.
 N, M, P = 1320, 800, 1140
