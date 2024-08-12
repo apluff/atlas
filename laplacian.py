@@ -159,6 +159,8 @@ class Runner:
     def __init__(self, mask, normal, U=None, hemisphere=0):
         n, m, p = mask.shape
         self.shape = (n, m, p)
+        mask = mask.astype('uint8') # DEBUG datatype change for test run
+        print(f"mask.dtype is: {mask.dtype}") # DEBUG statement
         assert mask.dtype == np.uint8
         # assert normal.dtype == np.float32
         assert normal.shape == self.shape + (3,)
@@ -302,4 +304,4 @@ def compute_laplacian(both_hemispheres=False):
 # ------------------------------------------------------------------------------------------------
 
 if __name__ == '__main__':
-    compute_laplacian(both_hemispheres=True)
+    compute_laplacian(both_hemispheres=False)

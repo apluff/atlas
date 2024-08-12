@@ -24,12 +24,15 @@ import numpy as np
 # ------------------------------------------------------------------------------------------------
 
 # Paths.
-ROOT_PATH = Path(__file__).parent.resolve()
+ROOT_PATH = Path('/scratch/user/s4296607/atlas/dummy.sh').parent.resolve() # Original ROOT_PATH checked __file__
+# ROOT_PATH = '/scratch/user/s4296607/atlas/'
 MASK_NRRD_PATH = ROOT_PATH / 'input/isocortex_mask_10.nrrd'
+# MASK_NRRD_PATH = ROOT_PATH + 'input/isocortex_mask_10.nrrd'
 BOUNDARY_NRRD_PATH = ROOT_PATH / 'input/isocortex_boundary_10.nrrd'
+# BOUNDARY_NRRD_PATH = ROOT_PATH + 'input/isocortex_boundary_10.nrrd'
 
 # Volume shape.
-N, M, P = 1320, 800, 1140
+N, M, P = 372, 633, 267
 
 # Values used in the mask file
 V_OUTSIDE = 0   # voxels outside of the surfaces and brain region
@@ -51,6 +54,7 @@ def region_dir(region):
     """Return the path to the directory containing the output data files for a given brain region.
     """
     region_dir = ROOT_PATH / f'regions/{region}'
+    # region_dir = ROOT_PATH + f'regions/{region}'
     region_dir.mkdir(exist_ok=True, parents=True)
     return region_dir
 

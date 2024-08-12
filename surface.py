@@ -126,6 +126,8 @@ def convol(arr, surf_mask, surf_idx=None, width=6, sigma=1.0):
     assert arr.dtype == np.int8
     assert surf_mask.ndim == 3
     assert surf_mask.dtype == bool
+    print(f"surf_mask.shape is: {surf_mask.shape}")
+    print(f"arr.shape is: {arr.shape}")
     assert surf_mask.shape == arr.shape[:3]
 
     assert width % 2 == 0
