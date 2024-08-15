@@ -12,9 +12,9 @@ import urllib
 
 import nrrd
 import h5py
-import numba
-from cupyx import jit
-import cupy as cp
+# import numba
+# from cupyx import jit
+# import cupy as cp
 from tqdm import tqdm
 import numpy as np
 
@@ -26,13 +26,13 @@ import numpy as np
 # Paths.
 ROOT_PATH = Path('/scratch/user/s4296607/atlas/dummy.sh').parent.resolve() # Original ROOT_PATH checked __file__
 # ROOT_PATH = '/scratch/user/s4296607/atlas/'
-MASK_NRRD_PATH = ROOT_PATH / 'input/isocortex_mask_10.nrrd'
+MASK_NRRD_PATH = ROOT_PATH / 'input/ftd_isocortex_mask_v3.nrrd'
 # MASK_NRRD_PATH = ROOT_PATH + 'input/isocortex_mask_10.nrrd'
-BOUNDARY_NRRD_PATH = ROOT_PATH / 'input/isocortex_boundary_10.nrrd'
+BOUNDARY_NRRD_PATH = ROOT_PATH / 'input/ftd_isocortex_boundaries_v2.nrrd'
 # BOUNDARY_NRRD_PATH = ROOT_PATH + 'input/isocortex_boundary_10.nrrd'
 
 # Volume shape.
-N, M, P = 372, 633, 267
+N, M, P = 1320, 800, 1140 
 
 # Values used in the mask file
 V_OUTSIDE = 0   # voxels outside of the surfaces and brain region
@@ -42,7 +42,7 @@ V_SB = 3        # bottom (inter) surface
 V_SE = 4        # intermediate surfaces
 
 # Region used.
-REGION = 'isocortex'
+REGION = 'isocortex_test'
 REGION_ID = 315
 
 
